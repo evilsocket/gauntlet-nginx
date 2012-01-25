@@ -9,18 +9,42 @@
 /* Begin PBXFileReference section */
 		8815AE9014CDF83D00117962 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8815AE9214CDF84700117962 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8817CD7F14D0A7E0007FCC2A /* g-nginx.h */ = {isa = PBXFileReference; path = "g-nginx.h"; sourceTree = "<group>"; };
+		8817CD8014D0A9FF007FCC2A /* g-nginx.c */ = {isa = PBXFileReference; path = "g-nginx.c"; sourceTree = "<group>"; };
+		8817CD8214D0B76B007FCC2A /* g-log.c */ = {isa = PBXFileReference; path = "g-log.c"; sourceTree = "<group>"; };
+		8817CD8314D0BAEE007FCC2A /* g-log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "g-log.h"; sourceTree = "<group>"; };
+		8817CD8414D0BBB3007FCC2A /* g-types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "g-types.h"; sourceTree = "<group>"; };
 		88A5A04314CDE75C00F4AFFE /* config */ = {isa = PBXFileReference; lastKnownFileType = text; path = config; sourceTree = "<group>"; };
-		88A5A04414CDE75C00F4AFFE /* gauntlet-nginx.c */ = {isa = PBXFileReference; path = "gauntlet-nginx.c"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		8817CD7A14D0A73C007FCC2A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				8817CD7F14D0A7E0007FCC2A /* g-nginx.h */,
+				8817CD8314D0BAEE007FCC2A /* g-log.h */,
+				8817CD8414D0BBB3007FCC2A /* g-types.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		8817CD7B14D0A73C007FCC2A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				8817CD8014D0A9FF007FCC2A /* g-nginx.c */,
+				8817CD8214D0B76B007FCC2A /* g-log.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		88A5A03914CDE71300F4AFFE = {
 			isa = PBXGroup;
 			children = (
+				8817CD7A14D0A73C007FCC2A /* include */,
+				8817CD7B14D0A73C007FCC2A /* src */,
 				8815AE9214CDF84700117962 /* LICENSE */,
 				8815AE9014CDF83D00117962 /* README.md */,
 				88A5A04314CDE75C00F4AFFE /* config */,
-				88A5A04414CDE75C00F4AFFE /* gauntlet-nginx.c */,
 			);
 			sourceTree = "<group>";
 		};

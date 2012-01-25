@@ -1,3 +1,5 @@
-ngx_addon_name=ngx_http_gauntlet_module
+ngx_addon_name=ngx_gauntlet_module
+
 HTTP_MODULES="$HTTP_MODULES ngx_gauntlet_module"
-NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/gauntlet-nginx.c"
+CORE_INCS="$CORE_INCS ${ngx_addon_dir}/include"
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS ${ngx_addon_dir}/src/g-nginx.c ${ngx_addon_dir}/src/g-log.c"
