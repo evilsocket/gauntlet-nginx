@@ -123,9 +123,7 @@ static void *ngx_gauntlet_create_srv_conf( ngx_conf_t *cf )
   
   if( conf == NULL )
     return NGX_CONF_ERROR;
-  
-  conf->logfd = NULL;
-  
+    
   return conf;
 }
 /*
@@ -225,7 +223,7 @@ ngx_int_t ngx_send_output( ngx_int_t code, ngx_http_request_t *req, u_char *stri
 
 static ngx_int_t ngx_gauntlet_request_handler( ngx_http_request_t *req )
 {
-  ngx_gauntlet_srv_conf_t *server   = ngx_http_get_module_srv_conf( req, ngx_gauntlet_module );
+  // ngx_gauntlet_srv_conf_t *server   = ngx_http_get_module_srv_conf( req, ngx_gauntlet_module );
   ngx_gauntlet_loc_conf_t *location = ngx_http_get_module_loc_conf( req, ngx_gauntlet_module );
   /*
    * If Gauntlet is not enabled for this location decline the request.
