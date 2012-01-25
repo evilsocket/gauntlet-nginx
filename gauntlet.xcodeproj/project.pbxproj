@@ -10,7 +10,7 @@
 		8815AE9014CDF83D00117962 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8815AE9214CDF84700117962 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		88A5A04314CDE75C00F4AFFE /* config */ = {isa = PBXFileReference; lastKnownFileType = text; path = config; sourceTree = "<group>"; };
-		88A5A04414CDE75C00F4AFFE /* gauntlet_main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gauntlet_main.c; sourceTree = "<group>"; };
+		88A5A04414CDE75C00F4AFFE /* gauntlet-nginx.c */ = {isa = PBXFileReference; path = "gauntlet-nginx.c"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -20,7 +20,7 @@
 				8815AE9214CDF84700117962 /* LICENSE */,
 				8815AE9014CDF83D00117962 /* README.md */,
 				88A5A04314CDE75C00F4AFFE /* config */,
-				88A5A04414CDE75C00F4AFFE /* gauntlet_main.c */,
+				88A5A04414CDE75C00F4AFFE /* gauntlet-nginx.c */,
 			);
 			sourceTree = "<group>";
 		};

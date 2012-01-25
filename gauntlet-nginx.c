@@ -25,7 +25,6 @@
 #endif
 
 #define DEFAULT_RULESET_PATH "/etc/nginx/gauntlet-ruleset.json"
-#define DEFAULT_LOGFILE_PATH "/var/log/nginx/gauntlet.log"
 
 typedef struct
 {
@@ -36,8 +35,6 @@ ngx_gauntlet_loc_conf_t;
 typedef struct
 {
   ngx_str_t  ruleset_path;
-  ngx_str_t  logfile_path;
-  FILE      *logfd;
 }
 ngx_gauntlet_srv_conf_t;
 
@@ -69,15 +66,6 @@ static ngx_command_t ngx_gauntlet_commands[] =
     NGX_HTTP_LOC_CONF_OFFSET,
     offsetof( ngx_gauntlet_loc_conf_t, enabled ),
     NULL
-  },
-  
-  {
-    ngx_string("gauntlet-logfile"),
-    NGX_HTTP_SRV_CONF | NGX_CONF_TAKE1,
-    ngx_conf_set_str_slot,
-    NGX_HTTP_SRV_CONF_OFFSET,
-    offsetof( ngx_gauntlet_srv_conf_t, logfile_path ),
-    NULL 
   },
   
   {
@@ -148,7 +136,6 @@ static char *ngx_gauntlet_merge_srv_conf( ngx_conf_t *cf, void *parent, void *ch
   ngx_gauntlet_srv_conf_t *prev = parent;
   ngx_gauntlet_srv_conf_t *conf = child;
   
-  ngx_conf_merge_str_value( conf->logfile_path, prev->logfile_path, DEFAULT_LOGFILE_PATH );
   ngx_conf_merge_str_value( conf->ruleset_path, prev->ruleset_path, DEFAULT_RULESET_PATH );
   
   return NGX_CONF_OK;
@@ -187,6 +174,7 @@ ngx_int_t ngx_send_output( ngx_int_t code, ngx_http_request_t *req, u_char *stri
   ngx_int_t    rc;
   ngx_buf_t   *buffer;
   ngx_chain_t  chain;
+  size_t       slen = strlen( (char *)string );
   
   /* discard request body, since we don't need it here */
   rc = ngx_http_discard_request_body(req);
@@ -216,13 +204,13 @@ ngx_int_t ngx_send_output( ngx_int_t code, ngx_http_request_t *req, u_char *stri
   
   /* adjust the pointers of the buffer */
   buffer->pos      = string;
-  buffer->last     = string + strlen((char *)string);
+  buffer->last     = string + slen;
   buffer->memory   = 1;  /* this buffer is in memory */
   buffer->last_buf = 1;  /* this is the last buffer in the buffer chain */
 
   /* set the status line */
   req->headers_out.status           = code;
-  req->headers_out.content_length_n = strlen((char *)string);
+  req->headers_out.content_length_n = slen;
   
   /* send the headers of your response */
   rc = ngx_http_send_header(req);
@@ -243,24 +231,7 @@ static ngx_int_t ngx_gauntlet_request_handler( ngx_http_request_t *req )
    * If Gauntlet is not enabled for this location decline the request.
    */
   if( !location->enabled )
-  {
-    if( !server->logfd )
-      server->logfd = fopen( (char *)server->logfile_path.data, "w+t" );
-    
-    if( !server->logfd )
-    {
-      char buffer[0xFF] = {0};
-      
-      sprintf( buffer, "Could not open file '%s': %s\n", (char *)server->logfile_path.data, strerror(errno) );
-      
-      return ngx_send_output( NGX_HTTP_INTERNAL_SERVER_ERROR, req, (u_char *)buffer );
-    }
-    
-    fprintf( server->logfd, "Gauntlet is not enabled for this location ...\n" ); 
-    fflush( server->logfd );
-    
     return NGX_DECLINED;
-  }
   
   return ngx_send_output( NGX_HTTP_OK, req, (u_char *)"Hello World from Gauntlet!!!" );
 }
