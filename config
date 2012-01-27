@@ -2,4 +2,5 @@ ngx_addon_name=ngx_gauntlet_module
 
 HTTP_MODULES="$HTTP_MODULES ngx_gauntlet_module"
 CORE_INCS="$CORE_INCS ${ngx_addon_dir}/include"
-NGX_ADDON_SRCS="$NGX_ADDON_SRCS ${ngx_addon_dir}/src/g-nginx.c ${ngx_addon_dir}/src/g-log.c"
+CFLAGS="$CFLAGS -w -Wall -Wpointer-arith -Wno-unused-parameter -Wunused-function -Wunused-variable -Wunused-value"
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS ${ngx_addon_dir}/src/g-nginx.c ${ngx_addon_dir}/src/g-log.c ${ngx_addon_dir}/src/g-rule-parser.c"

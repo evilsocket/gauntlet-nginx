@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		88088DDB14D2302D00A8FD47 /* g-rule-parser.h */ = {isa = PBXFileReference; path = "g-rule-parser.h"; sourceTree = "<group>"; };
+		88088DDD14D2305700A8FD47 /* g-rule-parser.rl */ = {isa = PBXFileReference; path = "g-rule-parser.rl"; sourceTree = "<group>"; };
+		88088DDE14D2326F00A8FD47 /* g-rule-parser.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "g-rule-parser.c"; sourceTree = "<group>"; };
 		8815AE9014CDF83D00117962 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8815AE9214CDF84700117962 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		8817CD7F14D0A7E0007FCC2A /* g-nginx.h */ = {isa = PBXFileReference; path = "g-nginx.h"; sourceTree = "<group>"; };
-		8817CD8014D0A9FF007FCC2A /* g-nginx.c */ = {isa = PBXFileReference; path = "g-nginx.c"; sourceTree = "<group>"; };
-		8817CD8214D0B76B007FCC2A /* g-log.c */ = {isa = PBXFileReference; path = "g-log.c"; sourceTree = "<group>"; };
+		8817CD7F14D0A7E0007FCC2A /* g-nginx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "g-nginx.h"; sourceTree = "<group>"; };
+		8817CD8014D0A9FF007FCC2A /* g-nginx.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "g-nginx.c"; sourceTree = "<group>"; };
+		8817CD8214D0B76B007FCC2A /* g-log.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "g-log.c"; sourceTree = "<group>"; };
 		8817CD8314D0BAEE007FCC2A /* g-log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "g-log.h"; sourceTree = "<group>"; };
 		8817CD8414D0BBB3007FCC2A /* g-types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "g-types.h"; sourceTree = "<group>"; };
 		88A5A04314CDE75C00F4AFFE /* config */ = {isa = PBXFileReference; lastKnownFileType = text; path = config; sourceTree = "<group>"; };
@@ -21,6 +24,7 @@
 		8817CD7A14D0A73C007FCC2A /* include */ = {
 			isa = PBXGroup;
 			children = (
+				88088DDB14D2302D00A8FD47 /* g-rule-parser.h */,
 				8817CD7F14D0A7E0007FCC2A /* g-nginx.h */,
 				8817CD8314D0BAEE007FCC2A /* g-log.h */,
 				8817CD8414D0BBB3007FCC2A /* g-types.h */,
@@ -31,6 +35,8 @@
 		8817CD7B14D0A73C007FCC2A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				88088DDE14D2326F00A8FD47 /* g-rule-parser.c */,
+				88088DDD14D2305700A8FD47 /* g-rule-parser.rl */,
 				8817CD8014D0A9FF007FCC2A /* g-nginx.c */,
 				8817CD8214D0B76B007FCC2A /* g-log.c */,
 			);

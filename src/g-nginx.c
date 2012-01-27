@@ -18,6 +18,7 @@
  */
 #include "g-types.h"
 #include "g-nginx.h"
+#include "g-rule-parser.h"
 #include "g-log.h"
 
 static ngx_http_module_t ngx_gauntlet_module_ctx = 
