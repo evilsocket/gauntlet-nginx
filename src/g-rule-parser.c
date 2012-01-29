@@ -31,157 +31,168 @@
 static const char _gt_rule_parser_actions[] = {
 	0, 1, 0, 1, 1, 1, 2, 1, 
 	3, 1, 4, 1, 5, 1, 6, 1, 
-	7, 2, 4, 0
+	7, 1, 8, 2, 1, 0, 2, 5, 
+	0
 };
 
 static const unsigned char _gt_rule_parser_key_offsets[] = {
-	0, 0, 5, 13, 14, 15, 16, 17, 
-	18, 23, 28, 30, 32, 38, 38, 39, 
-	40, 41, 42, 47, 52, 57, 63, 69, 
-	70, 71, 72, 73, 74, 79, 84, 86, 
-	88, 94, 100, 100, 101, 102, 104, 105, 
-	110, 115, 117, 118, 123, 131, 133, 142, 
-	144, 152, 153, 154, 155, 160, 165, 167, 
-	168, 169, 170, 171, 172, 173, 174, 175, 
-	180, 188, 190, 199, 201, 209
+	0, 0, 5, 13, 21, 22, 23, 24, 
+	25, 26, 31, 36, 38, 40, 46, 46, 
+	47, 48, 49, 50, 55, 60, 65, 71, 
+	77, 78, 79, 80, 81, 82, 83, 84, 
+	85, 86, 91, 96, 98, 100, 106, 112, 
+	112, 113, 114, 116, 117, 122, 127, 129, 
+	130, 135, 143, 145, 154, 156, 164, 165, 
+	166, 167, 172, 177, 179, 180, 181, 182, 
+	183, 184, 185, 186, 187, 192, 200, 202, 
+	211, 213, 221
 };
 
 static const char _gt_rule_parser_trans_keys[] = {
 	13, 32, 123, 9, 10, 13, 32, 97, 
+	99, 110, 116, 9, 10, 13, 32, 97, 
 	99, 110, 116, 9, 10, 117, 116, 104, 
 	111, 114, 13, 32, 58, 9, 10, 13, 
 	32, 34, 9, 10, 34, 92, 34, 92, 
 	13, 32, 44, 125, 9, 10, 104, 97, 
 	105, 110, 13, 32, 58, 9, 10, 13, 
 	32, 91, 9, 10, 13, 32, 123, 9, 
-	10, 13, 32, 102, 115, 9, 10, 13, 
-	32, 102, 115, 9, 10, 105, 108, 116, 
-	101, 114, 13, 32, 58, 9, 10, 13, 
-	32, 34, 9, 10, 34, 92, 34, 92, 
-	13, 32, 44, 125, 9, 10, 13, 32, 
-	44, 93, 9, 10, 99, 111, 112, 114, 
-	101, 13, 32, 58, 9, 10, 13, 32, 
-	34, 9, 10, 34, 92, 101, 13, 32, 
-	58, 9, 10, 13, 32, 43, 45, 9, 
+	10, 13, 32, 101, 115, 9, 10, 13, 
+	32, 101, 115, 9, 10, 120, 112, 114, 
+	101, 115, 115, 105, 111, 110, 13, 32, 
+	58, 9, 10, 13, 32, 34, 9, 10, 
+	34, 92, 34, 92, 13, 32, 44, 125, 
+	9, 10, 13, 32, 44, 93, 9, 10, 
+	99, 111, 112, 114, 101, 13, 32, 58, 
+	9, 10, 13, 32, 34, 9, 10, 34, 
+	92, 101, 13, 32, 58, 9, 10, 13, 
+	32, 43, 45, 9, 10, 48, 57, 48, 
+	57, 13, 32, 44, 46, 125, 9, 10, 
+	48, 57, 48, 57, 13, 32, 44, 125, 
+	9, 10, 48, 57, 97, 109, 101, 13, 
+	32, 58, 9, 10, 13, 32, 34, 9, 
+	10, 34, 92, 104, 114, 101, 115, 104, 
+	111, 108, 100, 13, 32, 58, 9, 10, 
+	13, 32, 43, 45, 9, 10, 48, 57, 
+	48, 57, 13, 32, 44, 46, 125, 9, 
 	10, 48, 57, 48, 57, 13, 32, 44, 
-	46, 125, 9, 10, 48, 57, 48, 57, 
-	13, 32, 44, 125, 9, 10, 48, 57, 
-	97, 109, 101, 13, 32, 58, 9, 10, 
-	13, 32, 34, 9, 10, 34, 92, 104, 
-	114, 101, 115, 104, 111, 108, 100, 13, 
-	32, 58, 9, 10, 13, 32, 43, 45, 
-	9, 10, 48, 57, 48, 57, 13, 32, 
-	44, 46, 125, 9, 10, 48, 57, 48, 
-	57, 13, 32, 44, 125, 9, 10, 48, 
-	57, 13, 32, 44, 9, 10, 0
+	125, 9, 10, 48, 57, 13, 32, 44, 
+	9, 10, 0
 };
 
 static const char _gt_rule_parser_single_lengths[] = {
-	0, 3, 6, 1, 1, 1, 1, 1, 
-	3, 3, 2, 2, 4, 0, 1, 1, 
-	1, 1, 3, 3, 3, 4, 4, 1, 
-	1, 1, 1, 1, 3, 3, 2, 2, 
-	4, 4, 0, 1, 1, 2, 1, 3, 
-	3, 2, 1, 3, 4, 0, 5, 0, 
-	4, 1, 1, 1, 3, 3, 2, 1, 
-	1, 1, 1, 1, 1, 1, 1, 3, 
-	4, 0, 5, 0, 4, 3
+	0, 3, 6, 6, 1, 1, 1, 1, 
+	1, 3, 3, 2, 2, 4, 0, 1, 
+	1, 1, 1, 3, 3, 3, 4, 4, 
+	1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 3, 3, 2, 2, 4, 4, 0, 
+	1, 1, 2, 1, 3, 3, 2, 1, 
+	3, 4, 0, 5, 0, 4, 1, 1, 
+	1, 3, 3, 2, 1, 1, 1, 1, 
+	1, 1, 1, 1, 3, 4, 0, 5, 
+	0, 4, 3
 };
 
 static const char _gt_rule_parser_range_lengths[] = {
-	0, 1, 1, 0, 0, 0, 0, 0, 
-	1, 1, 0, 0, 1, 0, 0, 0, 
-	0, 0, 1, 1, 1, 1, 1, 0, 
+	0, 1, 1, 1, 0, 0, 0, 0, 
+	0, 1, 1, 0, 0, 1, 0, 0, 
+	0, 0, 0, 1, 1, 1, 1, 1, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 1, 1, 0, 0, 1, 1, 0, 
 	0, 0, 0, 0, 1, 1, 0, 0, 
-	1, 1, 0, 0, 0, 0, 0, 1, 
-	1, 0, 0, 1, 2, 1, 2, 1, 
-	2, 0, 0, 0, 1, 1, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 1, 
-	2, 1, 2, 1, 2, 1
+	1, 2, 1, 2, 1, 2, 0, 0, 
+	0, 1, 1, 0, 0, 0, 0, 0, 
+	0, 0, 0, 0, 1, 2, 1, 2, 
+	1, 2, 1
 };
 
 static const short _gt_rule_parser_index_offsets[] = {
-	0, 0, 5, 13, 15, 17, 19, 21, 
-	23, 28, 33, 36, 39, 45, 46, 48, 
-	50, 52, 54, 59, 64, 69, 75, 81, 
-	83, 85, 87, 89, 91, 96, 101, 104, 
-	107, 113, 119, 120, 122, 124, 127, 129, 
-	134, 139, 142, 144, 149, 156, 158, 166, 
-	168, 175, 177, 179, 181, 186, 191, 194, 
-	196, 198, 200, 202, 204, 206, 208, 210, 
-	215, 222, 224, 232, 234, 241
+	0, 0, 5, 13, 21, 23, 25, 27, 
+	29, 31, 36, 41, 44, 47, 53, 54, 
+	56, 58, 60, 62, 67, 72, 77, 83, 
+	89, 91, 93, 95, 97, 99, 101, 103, 
+	105, 107, 112, 117, 120, 123, 129, 135, 
+	136, 138, 140, 143, 145, 150, 155, 158, 
+	160, 165, 172, 174, 182, 184, 191, 193, 
+	195, 197, 202, 207, 210, 212, 214, 216, 
+	218, 220, 222, 224, 226, 231, 238, 240, 
+	248, 250, 257
 };
 
 static const char _gt_rule_parser_indicies[] = {
 	0, 0, 2, 0, 1, 3, 3, 4, 
-	5, 6, 7, 3, 1, 8, 1, 9, 
-	1, 10, 1, 11, 1, 12, 1, 13, 
-	13, 14, 13, 1, 15, 15, 16, 15, 
-	1, 18, 19, 17, 21, 22, 20, 23, 
-	23, 2, 24, 23, 1, 20, 25, 1, 
-	26, 1, 27, 1, 28, 1, 29, 29, 
-	30, 29, 1, 31, 31, 32, 31, 1, 
-	33, 33, 34, 33, 1, 35, 35, 36, 
-	37, 35, 1, 38, 38, 39, 40, 38, 
-	1, 41, 1, 42, 1, 43, 1, 44, 
-	1, 45, 1, 46, 46, 47, 46, 1, 
-	48, 48, 49, 48, 1, 51, 52, 50, 
-	54, 55, 53, 56, 56, 57, 58, 56, 
-	1, 59, 59, 32, 21, 59, 1, 53, 
-	60, 1, 61, 1, 62, 63, 1, 64, 
-	1, 65, 65, 66, 65, 1, 67, 67, 
-	68, 67, 1, 70, 71, 69, 72, 1, 
-	73, 73, 74, 73, 1, 75, 75, 76, 
-	76, 75, 77, 1, 78, 1, 56, 56, 
-	57, 79, 58, 56, 78, 1, 80, 1, 
-	56, 56, 57, 58, 56, 80, 1, 81, 
-	1, 82, 1, 83, 1, 84, 84, 85, 
-	84, 1, 86, 86, 87, 86, 1, 89, 
-	90, 88, 91, 1, 92, 1, 93, 1, 
-	94, 1, 95, 1, 96, 1, 97, 1, 
-	98, 1, 99, 99, 100, 99, 1, 101, 
-	101, 102, 102, 101, 103, 1, 104, 1, 
-	23, 23, 2, 105, 24, 23, 104, 1, 
-	106, 1, 23, 23, 2, 24, 23, 106, 
-	1, 107, 107, 108, 107, 1, 0
+	5, 6, 7, 3, 1, 8, 8, 9, 
+	10, 11, 12, 8, 1, 13, 1, 14, 
+	1, 15, 1, 16, 1, 17, 1, 18, 
+	18, 19, 18, 1, 20, 20, 21, 20, 
+	1, 23, 24, 22, 26, 27, 25, 28, 
+	28, 29, 30, 28, 1, 25, 31, 1, 
+	32, 1, 33, 1, 34, 1, 35, 35, 
+	36, 35, 1, 37, 37, 38, 37, 1, 
+	39, 39, 40, 39, 1, 41, 41, 42, 
+	43, 41, 1, 44, 44, 45, 46, 44, 
+	1, 47, 1, 48, 1, 49, 1, 50, 
+	1, 51, 1, 52, 1, 53, 1, 54, 
+	1, 55, 1, 56, 56, 57, 56, 1, 
+	58, 58, 59, 58, 1, 61, 62, 60, 
+	64, 65, 63, 66, 66, 67, 68, 66, 
+	1, 69, 69, 38, 26, 69, 1, 63, 
+	70, 1, 71, 1, 72, 73, 1, 74, 
+	1, 75, 75, 76, 75, 1, 77, 77, 
+	78, 77, 1, 80, 81, 79, 82, 1, 
+	83, 83, 84, 83, 1, 85, 85, 86, 
+	86, 85, 87, 1, 88, 1, 66, 66, 
+	67, 89, 68, 66, 88, 1, 90, 1, 
+	66, 66, 67, 68, 66, 90, 1, 91, 
+	1, 92, 1, 93, 1, 94, 94, 95, 
+	94, 1, 96, 96, 97, 96, 1, 99, 
+	100, 98, 101, 1, 102, 1, 103, 1, 
+	104, 1, 105, 1, 106, 1, 107, 1, 
+	108, 1, 109, 109, 110, 109, 1, 111, 
+	111, 112, 112, 111, 113, 1, 114, 1, 
+	28, 28, 29, 115, 30, 28, 114, 1, 
+	116, 1, 28, 28, 29, 30, 28, 116, 
+	1, 117, 117, 118, 117, 1, 0
 };
 
 static const char _gt_rule_parser_trans_targs[] = {
-	1, 0, 2, 2, 3, 14, 49, 55, 
-	4, 5, 6, 7, 8, 8, 9, 9, 
-	10, 11, 12, 13, 11, 12, 13, 12, 
-	69, 15, 16, 17, 18, 18, 19, 19, 
-	20, 20, 21, 22, 23, 35, 22, 23, 
-	35, 24, 25, 26, 27, 28, 28, 29, 
-	29, 30, 31, 32, 34, 31, 32, 34, 
-	32, 22, 33, 33, 36, 37, 38, 42, 
-	39, 39, 40, 40, 41, 31, 32, 34, 
-	43, 43, 44, 44, 45, 46, 46, 47, 
-	48, 50, 51, 52, 52, 53, 53, 54, 
-	11, 12, 13, 56, 57, 58, 59, 60, 
-	61, 62, 63, 63, 64, 64, 65, 66, 
-	66, 67, 68, 69, 1
+	1, 0, 2, 3, 4, 15, 54, 60, 
+	3, 4, 15, 54, 60, 5, 6, 7, 
+	8, 9, 9, 10, 10, 11, 12, 13, 
+	14, 12, 13, 14, 13, 3, 74, 16, 
+	17, 18, 19, 19, 20, 20, 21, 21, 
+	22, 23, 24, 40, 23, 24, 40, 25, 
+	26, 27, 28, 29, 30, 31, 32, 33, 
+	33, 34, 34, 35, 36, 37, 39, 36, 
+	37, 39, 37, 23, 38, 38, 41, 42, 
+	43, 47, 44, 44, 45, 45, 46, 36, 
+	37, 39, 48, 48, 49, 49, 50, 51, 
+	51, 52, 53, 55, 56, 57, 57, 58, 
+	58, 59, 12, 13, 14, 61, 62, 63, 
+	64, 65, 66, 67, 68, 68, 69, 69, 
+	70, 71, 71, 72, 73, 74, 1
 };
 
 static const char _gt_rule_parser_trans_actions[] = {
-	1, 0, 0, 1, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 1, 0, 1, 
-	0, 5, 5, 5, 0, 0, 0, 1, 
-	0, 0, 0, 0, 0, 1, 0, 1, 
-	0, 1, 0, 17, 9, 9, 1, 0, 
+	1, 0, 0, 19, 3, 3, 3, 3, 
+	1, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 1, 0, 1, 0, 7, 7, 
+	7, 0, 0, 0, 1, 0, 0, 0, 
+	0, 0, 0, 1, 0, 1, 0, 1, 
+	0, 22, 11, 11, 1, 0, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	1, 0, 1, 0, 15, 15, 15, 0, 
+	0, 0, 1, 0, 0, 1, 0, 0, 
+	0, 0, 0, 1, 0, 1, 0, 13, 
+	13, 13, 0, 1, 0, 1, 17, 17, 
 	0, 0, 0, 0, 0, 0, 1, 0, 
-	1, 0, 13, 13, 13, 0, 0, 0, 
-	1, 0, 0, 1, 0, 0, 0, 0, 
-	0, 1, 0, 1, 0, 11, 11, 11, 
-	0, 1, 0, 1, 15, 15, 0, 0, 
-	0, 0, 0, 0, 1, 0, 1, 0, 
-	3, 3, 3, 0, 0, 0, 0, 0, 
-	0, 0, 0, 1, 0, 1, 7, 7, 
-	0, 0, 0, 1, 0
+	1, 0, 5, 5, 5, 0, 0, 0, 
+	0, 0, 0, 0, 0, 1, 0, 1, 
+	9, 9, 0, 0, 0, 1, 0
 };
 
 static const int gt_rule_parser_start = 1;
-static const int gt_rule_parser_first_final = 69;
+static const int gt_rule_parser_first_final = 74;
 static const int gt_rule_parser_error = 0;
 
 static const int gt_rule_parser_en_main = 1;
@@ -190,7 +201,31 @@ static const int gt_rule_parser_en_main = 1;
 #line 34 "src/g-rule-parser.rl"
 
 
-static u_char *gt_parse_string( gt_parser_t *parser, u_char *p, u_char *pe, u_char *buffer )
+void gt_print_ruleset( gt_ruleset_t *ruleset )
+{
+  size_t i, j;
+
+  gt_rule_t   *rules = (gt_rule_t *)ruleset->elts;
+  gt_filter_t *filters;
+
+  for( i = 0; i < ruleset->nelts; i++ )
+  {    
+    printf( "RULE [%p]\n{\n", rules[i] );
+    
+    filters = (gt_filter_t *)rules[i].chain.elts;
+    for( j = 0; j < rules[i].chain.nelts; j++ )
+    {
+      printf( "  scope      : %s\n"
+              "  expression : %s\n"
+              "  score      : %.2f\n", filters[j].scope, filters[j].expression, filters[j].score );
+              
+    }
+
+    printf( "}\n" );
+  }
+}
+
+u_char *gt_parse_string( gt_parser_t *parser, u_char *p, u_char *pe, u_char *buffer )
 {  
   u_char *ptr = buffer;
   size_t   i  = 0;
@@ -211,7 +246,7 @@ static u_char *gt_parse_string( gt_parser_t *parser, u_char *p, u_char *pe, u_ch
   return p;
 }
               
-static u_char *gt_parse_real( gt_parser_t *parser, u_char *p, u_char *pe, double *pdouble )
+u_char *gt_parse_real( gt_parser_t *parser, u_char *p, u_char *pe, double *pdouble )
 {
   size_t neg = 0, 
          dec = 0,
@@ -255,62 +290,74 @@ static u_char *gt_parse_real( gt_parser_t *parser, u_char *p, u_char *pe, double
   return p < pe && p ? p - 1 : NULL;
 }
 
-static gt_filter_t* gt_chain_push( gt_chain_t *chain )
-{
-  size_t       idx;   
-  gt_filter_t *pcurr;              
-              
-  idx            = chain->nfilters;                
-  chain->filters = (gt_filter_t *)realloc( chain->filters, ++chain->nfilters * sizeof(gt_filter_t) );               
-  pcurr          = chain->filters + idx;    
-              
-  GT_ZEROIZE( &pcurr->scope );  
-  GT_ZEROIZE( &pcurr->filter );        
-  pcurr->score = 0.0;               
-              
-  return pcurr;              
-}
-              
-static void gt_rule_init( gt_rule_t *rule )
+void gt_rule_init( gt_parser_t *parser, gt_rule_t *rule )
 {
   GT_ZEROIZE( &rule->name );              
   GT_ZEROIZE( &rule->author );     
-  rule->threshold      = 0.0;              
-  rule->chain.nfilters = 0;
-  rule->chain.filters  = NULL;    
+  rule->threshold = 0.0;   
+
+  ngx_array_init( &rule->chain, parser->pool, 10, sizeof(gt_filter_t) );
+}
+
+void gt_filter_init( gt_parser_t *parser, gt_filter_t *filter )
+{
+  GT_ZEROIZE( &filter->scope );              
+  GT_ZEROIZE( &filter->expression );  
+  
+  memset( &filter->compiled, 0x00, sizeof( ngx_regex_compile_t ) );
+
+  filter->score = 0.0;
+}
+
+size_t gt_filter_compile( gt_parser_t *parser, gt_filter_t *filter )
+{
+  ngx_str_set( &filter->compiled.pattern, filter->expression );
+
+  filter->compiled.pool     = parser->pool;
+  filter->compiled.err.len  = GT_MAX_STRING_SIZE;
+  filter->compiled.err.data = parser->error;
+
+  if( ngx_regex_compile(&filter->compiled) != NGX_OK ) 
+    return GT_PARSER_ERROR;
+
+  return GT_PARSER_SUCCESS;
 }
 
 void gt_rule_free( gt_rule_t *rule )
-{
-  if( rule && rule->chain.nfilters && rule->chain.filters )
-  {
-    free( rule->chain.filters );
-    gt_rule_init( rule );
-  }
+{  
+  ngx_array_destroy( &rule->chain );
+  GT_ZEROIZE( &rule->name );              
+  GT_ZEROIZE( &rule->author );     
+  rule->threshold = 0.0;   
 }
 
-void gt_parser_init( gt_parser_t *parser )
+void gt_parser_init( gt_parser_t *parser, ngx_pool_t *pool )
 {
+  parser->pool   = pool;
   parser->lineno = 1;
   parser->bsize  = 0;              
   parser->buffer = NULL;            
-  parser->filter = NULL;              
+  parser->filter = NULL;        
+  parser->rule   = NULL;
+  
   GT_ZEROIZE( &parser->error );
 }
 
-size_t gt_parser_readfile( gt_parser_t *parser, FILE *fp )
+size_t gt_parser_readfile( gt_parser_t *parser, ngx_fd_t fd )
 {
-  if( !fp )
+  if( fd == NGX_INVALID_FILE )
   {
-    sprintf( parser->error, "Invalid file handle" );                
+    sprintf( parser->error, "Invalid file descriptor" );                
     return GT_PARSER_ERROR;
   }
-              
-  fseek( fp, 0, SEEK_END );
 
-  parser->bsize = ftell(fp);
+  if( ( parser->bsize = lseek( fd, 0, SEEK_END ) ) == -1 )
+  {
+    sprintf( parser->error, "lseek failed" );                
+    return GT_PARSER_ERROR;
+  }
 
-  rewind(fp);
+  lseek( fd, 0, SEEK_SET );
 
   parser->buffer = (u_char *)calloc( parser->bsize, 1 );
   if( !parser->buffer )              
@@ -319,7 +366,7 @@ size_t gt_parser_readfile( gt_parser_t *parser, FILE *fp )
     return GT_PARSER_ERROR;
   }          
 
-  if( fread( parser->buffer, 1, parser->bsize, fp ) != parser->bsize )
+  if( read( fd, parser->buffer, parser->bsize ) != parser->bsize )
   {
     free( parser->buffer );
     sprintf( parser->error, "Error reading file" );                
@@ -334,31 +381,29 @@ void gt_parser_free( gt_parser_t *parser )
   if( parser && parser->bsize && parser->buffer )
   {
     free( parser->buffer );
-    gt_parser_init( parser );          
+    gt_parser_init( parser, NULL );          
   }
 }
               
-size_t gt_parse_rule( gt_parser_t *parser, gt_rule_t *rule )
+size_t gt_parse_ruleset( gt_parser_t *parser, gt_ruleset_t *ruleset )
 {
   if( !parser->bsize || !parser->buffer )
   {
     sprintf( parser->error, "Invalid input buffer" );              
     return GT_PARSER_ERROR;
   }
-              
+        
   int      cs, i;
   u_char  *p  = parser->buffer,
           *pe = parser->buffer + parser->bsize;
-                              
-  gt_rule_init( rule );              
-                          
+                                                        
 
-#line 357 "src/g-rule-parser.c"
+#line 402 "src/g-rule-parser.c"
 	{
 	cs = gt_rule_parser_start;
 	}
 
-#line 362 "src/g-rule-parser.c"
+#line 407 "src/g-rule-parser.c"
 	{
 	int _klen;
 	unsigned int _trans;
@@ -433,64 +478,80 @@ _match:
 		switch ( *_acts++ )
 		{
 	case 0:
-#line 200 "src/g-rule-parser.rl"
+#line 234 "src/g-rule-parser.rl"
 	{ 
     if( (*p) == '\n' ) 
       ++parser->lineno; 
   }
 	break;
 	case 1:
-#line 206 "src/g-rule-parser.rl"
-	{ 
-    GT_PARSER_FILL_STRING( rule->name );                                  
-    {p = (( p))-1;}
+#line 240 "src/g-rule-parser.rl"
+	{            
+    parser->rule = (gt_rule_t *)ngx_array_push( ruleset );
+
+    gt_rule_init( parser, parser->rule );
   }
 	break;
 	case 2:
-#line 212 "src/g-rule-parser.rl"
-	{
-    GT_PARSER_FILL_STRING( rule->author );
+#line 247 "src/g-rule-parser.rl"
+	{ 
+    GT_PARSER_FILL_STRING( parser->rule->name );    
+                              
     {p = (( p))-1;}
   }
 	break;
 	case 3:
-#line 218 "src/g-rule-parser.rl"
+#line 254 "src/g-rule-parser.rl"
 	{
-    GT_PARSER_FILL_REAL( rule->threshold );              
+    GT_PARSER_FILL_STRING( parser->rule->author );
+
     {p = (( p))-1;}
   }
 	break;
 	case 4:
-#line 224 "src/g-rule-parser.rl"
-	{          
-    parser->filter = gt_chain_push( &rule->chain );          
+#line 261 "src/g-rule-parser.rl"
+	{
+    GT_PARSER_FILL_REAL( parser->rule->threshold );   
+           
+    {p = (( p))-1;}
   }
 	break;
 	case 5:
-#line 229 "src/g-rule-parser.rl"
+#line 268 "src/g-rule-parser.rl"
+	{    
+    parser->filter = (gt_filter_t *)ngx_array_push( &parser->rule->chain );
+
+    gt_filter_init( parser, parser->filter );
+  }
+	break;
+	case 6:
+#line 275 "src/g-rule-parser.rl"
 	{
     GT_PARSER_FILL_STRING( parser->filter->scope );
          
     {p = (( p))-1;}              
   }
 	break;
-	case 6:
-#line 236 "src/g-rule-parser.rl"
+	case 7:
+#line 282 "src/g-rule-parser.rl"
 	{
-    GT_PARSER_FILL_STRING( parser->filter->filter );
+    GT_PARSER_FILL_STRING( parser->filter->expression );
+
+    if( gt_filter_compile( parser, parser->filter ) != GT_PARSER_SUCCESS )
+      return GT_PARSER_ERROR;
      
     {p = (( p))-1;}              
   }
 	break;
-	case 7:
-#line 243 "src/g-rule-parser.rl"
+	case 8:
+#line 292 "src/g-rule-parser.rl"
 	{
     GT_PARSER_FILL_REAL( parser->filter->score );
        
     {p = (( p))-1;}              
   }
 	break;
-#line 494 "src/g-rule-parser.c"
+#line 555 "src/g-rule-parser.c"
 		}
 	}
 
@@ -503,7 +564,7 @@ _again:
 	_out: {}
 	}
 
-#line 287 "src/g-rule-parser.rl"
+#line 336 "src/g-rule-parser.rl"
 
               
   if( cs < gt_rule_parser_first_final )

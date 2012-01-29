@@ -25,7 +25,7 @@
 /*
  * Default ruleset path if none specified inside the configuration.
  */
-#define DEFAULT_RULESET_PATH "/etc/nginx/gauntlet-ruleset.json"
+#define DEFAULT_RULESET_PATH "/etc/nginx/gauntlet-ruleset.gt"
 
 /*
  * Install the request handler and initialize the module main configuration.

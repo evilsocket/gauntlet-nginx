@@ -1,0 +1,40 @@
+{
+  name : "Test args rule",
+  author : "Simone Margaritelli",
+  threshold : 0,
+  chain:
+  [
+    {
+      scope : "${ARGS}",
+      expression : ".*",
+      score : 1
+    }
+  ]
+}
+,
+{
+  name : "Test header rule",
+  author : "Simone Margaritelli",
+  threshold : 0,
+  chain:
+  [
+    {
+      scope : "${HTTP[Content-Type]}",
+      expression : ".*",
+      score : 1
+    }
+  ]
+},
+{
+  name : "Test cookie rule",
+  author : "Simone Margaritelli",
+  threshold : 0,
+  chain:
+  [
+    {
+      scope : "${COOKIE}",
+      expression : ".*",
+      score : 1
+    }
+  ]
+}

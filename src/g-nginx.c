@@ -49,7 +49,7 @@ static ngx_command_t ngx_gauntlet_commands[] =
     NGX_HTTP_MAIN_CONF | NGX_HTTP_SRV_CONF | NGX_CONF_TAKE1,
     ngx_conf_set_str_slot,
     NGX_HTTP_MAIN_CONF_OFFSET,
-    offsetof( ngx_gauntlet_conf_t, ruleset ),
+    offsetof( ngx_gauntlet_conf_t, ruleset_filename ),
     NULL 
   },
   
@@ -100,12 +100,51 @@ static ngx_int_t ngx_gauntlet_initialize(ngx_conf_t *cf)
   /*
    * Open the ruleset.
    */
-  gconf->rulefd = ngx_open_file( gconf->ruleset.data, NGX_FILE_RDONLY, 0, 0);  
+  gconf->rulefd = ngx_open_file( gconf->ruleset_filename.data, NGX_FILE_RDONLY, 0, 0);  
   if( gconf->rulefd == NGX_INVALID_FILE ) 
   {
-    fprintf( stderr, "[ERROR] Unable to load Gauntlet ruleset from '%s' : %s.\n", gconf->ruleset.data, strerror(errno) );
+    fprintf( stderr, "[ERROR] Unable to load Gauntlet ruleset from '%s' : %s.\n", gconf->ruleset_filename.data, strerror(errno) );
     return NGX_ERROR;
   }
+  
+  gt_parser_init( &gconf->parser, cf->pool );
+  
+  if( gt_parser_readfile( &gconf->parser, gconf->rulefd ) != GT_PARSER_SUCCESS )
+  {
+    fprintf( stderr, "[ERROR] Unable to load Gauntlet ruleset from '%s' : %s.\n", gconf->ruleset_filename.data, gconf->parser.error );
+    
+    gt_parser_free( &gconf->parser );
+    close( gconf->rulefd );
+    
+    return NGX_ERROR;
+  }
+  
+  close( gconf->rulefd );
+  
+  if( ngx_array_init( &gconf->ruleset, gconf->parser.pool, 10, sizeof(gt_rule_t) ) != NGX_OK )
+  {
+    fprintf( stderr, "[ERROR] Could not initialize ruleset structure.\n" );
+    
+    gt_parser_free( &gconf->parser );
+    
+    return NGX_ERROR;
+  }
+  
+  if( gt_parse_ruleset( &gconf->parser, &gconf->ruleset ) != GT_PARSER_SUCCESS )
+  {
+    fprintf( stderr, "[ERROR] Error parsing ruleset '%s' : %s.\n", gconf->ruleset_filename.data, gconf->parser.error );
+    
+    gt_parser_free( &gconf->parser );
+    
+    return NGX_ERROR;
+  }
+  
+  gt_parser_free( &gconf->parser );
+  
+  #if (GAUNTLET_DEBUG)
+    gt_print_ruleset( &gconf->ruleset );
+  #endif
+    
   /*
    * Finally install the request handler.
    */
@@ -130,7 +169,7 @@ static void *ngx_gauntlet_create_main_conf( ngx_conf_t *cf )
   if( conf == NULL )
     return NGX_CONF_ERROR;
   
-  ngx_str_set( &conf->ruleset, DEFAULT_RULESET_PATH );
+  ngx_str_set( &conf->ruleset_filename, DEFAULT_RULESET_PATH );
   conf->rulefd = NGX_INVALID_FILE;
   
   ngx_str_set( &conf->logfile, DEFAULT_LOGFILE_PATH );

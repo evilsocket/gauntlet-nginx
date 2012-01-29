@@ -1,3 +1,5 @@
+
+#line 1 "src/g-scope-parser.rl"
 /*
  * This file is part of the Gauntlet security system.
  *
@@ -16,35 +18,4 @@
  * You should have received a copy of the GNU General Public License
  * along with Gauntlet.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef GAUNTLET_TYPES_H
-# define GAUNTLET_TYPES_H
-
-#include <ngx_config.h>
-#include <ngx_core.h>
-#include <ngx_http.h>
-#include "g-rule-parser.h"
-
-/*
- * Main configuration structure.
- */
-typedef struct
-{
-  ngx_str_t    ruleset_filename;
-  ngx_fd_t     rulefd;
-  gt_parser_t  parser;
-  gt_ruleset_t ruleset;
-  
-  ngx_str_t logfile;
-  ngx_fd_t  logfd;
-}
-ngx_gauntlet_conf_t;
-/*
- * Per-location configuration structure.
- */
-typedef struct
-{
-  ngx_flag_t enabled;  
-}
-ngx_gauntlet_loc_conf_t;
-
-#endif
+#include "g-scope-parser.h"
